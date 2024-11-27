@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'core',
     'machineLearning',
     'products',
-    'usuarios'
+    'usuarios',
+ 
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

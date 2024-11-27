@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gráficos por Pregunta</title>
+</head>
+<body>
+    <h1>Gráficos de Promedios por Pregunta</h1>
+    {% for pregunta, graph_html in graficos.items %}
+        <div>
+            <h2>{{ pregunta }}</h2>
+            <div>{{ graph_html|safe }}</div>
+        </div>
+    {% endfor %}
+</body>
+</html>
