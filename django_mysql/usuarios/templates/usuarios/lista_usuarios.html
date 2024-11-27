@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+<h1 class="mb-4">Lista de Usuarios</h1>
+
+<!-- Formulario de búsqueda -->
+<form method="get" action="{% url 'usuarios:buscar_usuario' %}" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Buscar usuario..." value="{{ request.GET.q }}">
+        <button class="btn btn-primary" type="submit">
+            <i class="bi bi-search"></i> Buscar
+        </button>
+    </div>
+</form>
+
+<!-- Tabla de usuarios -->
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Edad</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.edad }}</td>
+            <td>
+                <a href="{% url 'usuarios:editar_usuario' usuario.pk %}" class="btn btn-warning btn-sm">
+                    <i class="bi bi-pencil"></i> Editar
+                </a>
+                <a href="{% url 'usuarios:eliminar_usuario' usuario.pk %}" class="btn btn-danger btn-sm">
+                    <i class="bi bi-trash"></i> Eliminar
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Botón para crear nuevo usuario con ícono -->
+<a href="{% url 'usuarios:crear_usuario' %}" class="btn btn-success">
+    <i class="bi bi-plus-circle"></i> Crear Nuevo Usuario
+</a>
+
+{% endblock %}

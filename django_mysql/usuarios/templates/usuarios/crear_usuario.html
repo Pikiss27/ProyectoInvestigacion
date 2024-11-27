@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1 class="mb-4">Crear Usuario</h1>
+
+<!-- Formulario para crear usuario -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">
+        <i class="bi bi-person-plus"></i> Crear
+    </button>
+</form>
+
+<!-- Botón para cancelar con ícono -->
+<a href="{% url 'usuarios:lista_usuarios' %}" class="btn btn-secondary mt-3">
+    <i class="bi bi-x-circle"></i> Cancelar
+</a>
+
+{% endblock %}

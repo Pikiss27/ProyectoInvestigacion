@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1 class="mb-4">¿Estás seguro de eliminar el usuario {{ usuario.nombre }}?</h1>
+
+<!-- Centrando los botones -->
+<div class="d-flex justify-content-center mt-3">
+    <!-- Formulario para eliminar usuario -->
+    <form method="post" class="me-2">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash"></i> Eliminar
+        </button>
+    </form>
+
+    <!-- Botón para cancelar con ícono -->
+    <a href="{% url 'usuarios:lista_usuarios' %}" class="btn btn-secondary">
+        <i class="bi bi-x-circle"></i> Cancelar
+    </a>
+</div>
+{% endblock %}
