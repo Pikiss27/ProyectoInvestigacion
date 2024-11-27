@@ -2,126 +2,144 @@
 
 {% block content %}
 
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riesgos Psicosociales en el Trabajo</title>
+    <title>Conversemos acerca del riesgo psicosocial en el trabajo</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     
+    <style>
+        body {
+            background-color: #F1E6D6;
+        }
+        .hero-section {
+            background: #5CCB5F;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+    </style>
 </head>
 <body>
-    <div class="container my-5">
-        <h1 class="text-center mb-4">Riesgos Psicosociales en el Ambiente Laboral</h1>
 
-        <!-- Tabla de Factores de Riesgo Psicosocial -->
-        <div class="table-responsive mb-5">
-            <table class="table table-bordered">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Factor de Riesgo</th>
-                        <th>Descripción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cargas de trabajo excesivas</td>
-                        <td>Cuando los empleados tienen demasiadas responsabilidades o plazos irrealistas, se genera estrés crónico y agotamiento.</td>
-                    </tr>
-                    <tr>
-                        <td>Inseguridad laboral</td>
-                        <td>La incertidumbre acerca de la estabilidad en el empleo crea ansiedad y estrés.</td>
-                    </tr>
-                    <tr>
-                        <td>Falta de autonomía</td>
-                        <td>La incapacidad para tomar decisiones o controlar aspectos del propio trabajo causa frustración y baja motivación.</td>
-                    </tr>
-                    <tr>
-                        <td>Ambiente de trabajo hostil</td>
-                        <td>Las malas relaciones laborales y la falta de comunicación afectan el bienestar emocional y la moral del equipo.</td>
-                    </tr>
-                    <tr>
-                        <td>Desbalance trabajo-vida personal</td>
-                        <td>Cuando el trabajo invade la vida personal, se genera agotamiento y conflictos familiares.</td>
-                    </tr>
-                    <tr>
-                        <td>Falta de claridad en el rol</td>
-                        <td>La ambigüedad en las responsabilidades o expectativas causa confusión, estrés y baja productividad.</td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- Sección principal -->
+    <div class="hero-section">
+        <h1>Aprende acerca del riesgo psicosocial en el trabajo</h1>
+        <p>A continuación se detalla los riesgos, sus consecuencias y cómo mitigar los efectos en la salud mental</p>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{% static 'images/que.jpg' %}" class="card-img-top" alt="Riesgo Psicosocial">
+                    <div class="card-header bg-primary text-white">
+                        <h5>¿Qué es el Riesgo Psicosocial?</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>El riesgo psicosocial hace referencia a la exposición de los trabajadores a factores que afectan su bienestar psicológico, social y físico en el ámbito laboral. Estos riesgos pueden incluir sobrecarga de trabajo, falta de control, conflictos interpersonales, entre otros.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{% static 'images/conse.jpg' %}" class="card-img-top" alt="Consecuencias del Riesgo Psicosocial">
+                    <div class="card-header bg-warning text-dark">
+                        <h5>Consecuencias del Riesgo Psicosocial</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><strong>Estrés Crónico:</strong> Impacta la salud mental y física.</li>
+                            <li><strong>Burnout:</strong> Agotamiento extremo debido a la presión constante.</li>
+                            <li><strong>Ansiedad y Depresión:</strong> Problemas psicológicos graves por la tensión laboral.</li>
+                            <li><strong>Conflictos Interpersonales:</strong> Deterioro en las relaciones laborales.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Cards de Factores de Riesgo Psicosocial -->
+        <!-- Mitigación de riesgos -->
+        <div class="row my-5">
+            <div class="col-md-12">
+                <div class="card">
+                    <img src="{% static 'images/mitigacion.jpg' %}" class="card-img-top" alt="Mitigación del Riesgo Psicosocial">
+                    <div class="card-header bg-success text-white">
+                        <h5>¿Cómo Mitigar el Riesgo Psicosocial?</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Para reducir los riesgos psicosociales en el lugar de trabajo, se pueden adoptar diversas medidas tanto a nivel personal como organizacional:</p>
+                        <ul>
+                            <li><strong>Fomentar un ambiente de trabajo saludable:</strong> Promover la comunicación abierta y el apoyo mutuo.</li>
+                            <li><strong>Reorganizar tareas laborales:</strong> Mejorar la distribución del trabajo para evitar sobrecargas.</li>
+                            <li><strong>Proveer capacitación sobre manejo del estrés:</strong> Cursos y talleres que ayuden a los empleados a manejar situaciones difíciles.</li>
+                            <li><strong>Fomentar la flexibilidad laboral:</strong> Permitir horarios de trabajo flexibles y trabajo remoto cuando sea posible.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de estrategias -->
         <div class="row">
-            <!-- Card 1 -->
-            <div class="col-md-4 mb-4">
+            <div class="col-md-12">
                 <div class="card">
-                    <img src="https://koneggui.com.ec/images/easyblog_articles/169/riesgos-psicosociales.jpg" class="card-img-top" alt="Cargas de trabajo excesivas">
-                    <div class="card-body">
-                        <h5 class="card-title">Cargas de trabajo excesivas</h5>
-                        <p class="card-text">El exceso de trabajo genera estrés crónico y agotamiento en los empleados.</p>
+                    <div class="card-header bg-info text-white">
+                        <h5>Estrategias de Mitigación por Área</h5>
                     </div>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://koneggui.com.ec/images/easyblog_articles/169/riesgos-psicosociales.jpg" class="card-img-top" alt="Inseguridad laboral">
                     <div class="card-body">
-                        <h5 class="card-title">Inseguridad laboral</h5>
-                        <p class="card-text">La incertidumbre en la estabilidad laboral aumenta la ansiedad y el estrés.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://koneggui.com.ec/images/easyblog_articles/169/riesgos-psicosociales.jpg" class="card-img-top" alt="Falta de autonomía">
-                    <div class="card-body">
-                        <h5 class="card-title">Falta de autonomía</h5>
-                        <p class="card-text">La falta de control sobre el propio trabajo causa frustración y desmotivación.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://koneggui.com.ec/images/easyblog_articles/169/riesgos-psicosociales.jpg" class="card-img-top" alt="Ambiente de trabajo hostil">
-                    <div class="card-body">
-                        <h5 class="card-title">Ambiente de trabajo hostil</h5>
-                        <p class="card-text">Las malas relaciones laborales y el acoso afectan el bienestar emocional.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 5 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://koneggui.com.ec/images/easyblog_articles/169/riesgos-psicosociales.jpg" class="card-img-top" alt="Desbalance trabajo-vida personal">
-                    <div class="card-body">
-                        <h5 class="card-title">Desbalance trabajo-vida personal</h5>
-                        <p class="card-text">El trabajo excesivo afecta la vida personal, generando conflictos y agotamiento.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 6 -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="https://koneggui.com.ec/images/easyblog_articles/169/riesgos-psicosociales.jpg" class="card-img-top" alt="Falta de claridad en el rol">
-                    <div class="card-body">
-                        <h5 class="card-title">Falta de claridad en el rol</h5>
-                        <p class="card-text">La ambigüedad en las tareas causa confusión, estrés y baja productividad.</p>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Área</th>
+                                    <th>Estrategia</th>
+                                    <th>Beneficio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Trabajo en equipo</td>
+                                    <td>Fomentar la colaboración y el soporte entre compañeros</td>
+                                    <td>Mejora de la cohesión y disminución de conflictos</td>
+                                </tr>
+                                <tr>
+                                    <td>Comunicación</td>
+                                    <td>Establecer canales de comunicación claros y accesibles</td>
+                                    <td>Reducción de malentendidos y aumento de la productividad</td>
+                                </tr>
+                                <tr>
+                                    <td>Tiempo de descanso</td>
+                                    <td>Incorporar pausas regulares y descansos breves</td>
+                                    <td>Recarga de energías y reducción del estrés</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Pie de página -->
+   
+
+    <!-- Bootstrap 5 JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-
-
 {% endblock %}

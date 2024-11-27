@@ -1,10 +1,15 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #F1E6D6; /* Fondo plomo oscuro */
+    }
+</style>
 <div class="container">
     <header class="text-center">
-        <h2>Carga y Ritmo de Trabajo</h2>
-        <h3>Responda los siguientes items</h3>
+        <h4>Empezarémos el cuestionario teniendo en cuenta que se usa una escala de Likert</h4>
+        <h4>con valores del 1 al 4 detallados a continuación:</h4>
     </header>
 
     <div class="container mt-5">
@@ -43,102 +48,197 @@
             </div>
         </div>
     </div>
-<!---->
+
+
+    <header class="text-center">
+        <h4>Ahora vamos a evaluar la carga y ritmo de trabajo</h4>
+    </header>
+
     {% if response %}
     <div class="alert alert-info text-center">
         <h2>Tiene un {{ response }}</h2>
     </div>
     {% endif %}
 
-    <form method="POST" >
+    <form method="POST">
         {% csrf_token %}
-        
-        <div class="mb-3">
+
+        <!-- First Question Group: Light Red Background -->
+        <div class="mb-3 p-4 bg-light border rounded">
             <label class="form-label">Considero que son aceptables las solicitudes y requerimientos que me piden otras personas (compañeros de trabajo, usuarios, clientes)</label>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-danger me-4">
-                    <input type="radio" name="pregunta1" value="1" required> En desacuerdo
-                </label>
-                <label class="btn btn-outline-warning me-4">
-                    <input type="radio" name="pregunta1" value="2" required> Poco de acuerdo
-                </label>
-                <label class="btn btn-outline-primary me-4">
-                    <input type="radio" name="pregunta1" value="3" required> Parcialmente de acuerdo
-                </label>
-                <label class="btn btn-outline-success">
-                    <input type="radio" name="pregunta1" value="4" required> Completamente de acuerdo
-                </label>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-danger me-4">
+                        <input type="radio" name="pregunta1" value="1" required> En desacuerdo
+                    </label>
+                    <label class="btn btn-outline-warning me-4">
+                        <input type="radio" name="pregunta1" value="2" required> Poco de acuerdo
+                    </label>
+                    <label class="btn btn-outline-primary me-4">
+                        <input type="radio" name="pregunta1" value="3" required> Parcialmente de acuerdo
+                    </label>
+                    <label class="btn btn-outline-success">
+                        <input type="radio" name="pregunta1" value="4" required> Completamente de acuerdo
+                    </label>
+                </div>
             </div>
         </div>
 
-        <div class="mb-3">
+        <!-- Second Question Group: Light Yellow Background -->
+        <div class="mb-3 p-4 bg-light border rounded mt-3">
             <label class="form-label">Decido el ritmo de trabajo en mis actividades</label>
-            <br>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-danger me-4">
-                    <input type="radio" name="pregunta2" value="1" required> En desacuerdo
-                </label>
-                <label class="btn btn-outline-warning me-4">
-                    <input type="radio" name="pregunta2" value="2" required> Poco de acuerdo
-                </label>
-                <label class="btn btn-outline-primary me-4">
-                    <input type="radio" name="pregunta2" value="3" required> Parcialmente de acuerdo
-                </label>
-                <label class="btn btn-outline-success">
-                    <input type="radio" name="pregunta2" value="4" required> Completamente de acuerdo
-                </label>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-danger me-4">
+                        <input type="radio" name="pregunta2" value="1" required> En desacuerdo
+                    </label>
+                    <label class="btn btn-outline-warning me-4">
+                        <input type="radio" name="pregunta2" value="2" required> Poco de acuerdo
+                    </label>
+                    <label class="btn btn-outline-primary me-4">
+                        <input type="radio" name="pregunta2" value="3" required> Parcialmente de acuerdo
+                    </label>
+                    <label class="btn btn-outline-success">
+                        <input type="radio" name="pregunta2" value="4" required> Completamente de acuerdo
+                    </label>
+                </div>
             </div>
         </div>
 
-        <div class="mb-3">
+        <!-- Third Question Group: Light Blue Background -->
+        <div class="mb-3 p-4 bg-light border rounded mt-3">
             <label class="form-label">Las actividades y/o responsabilidades que me fueron asignadas no me causan estrés</label>
-            <div class="btn-group btn-outline-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-danger me-4">
-                    <input type="radio" name="pregunta3" value="1" required> En desacuerdo
-                </label>
-                <label class="btn btn-outline-warning me-4">
-                    <input type="radio" name="pregunta3" value="2" required> Poco de acuerdo
-                </label>
-                <label class="btn btn-outline-primary me-4">
-                    <input type="radio" name="pregunta3" value="3" required> Parcialmente de acuerdo
-                </label>
-                <label class="btn btn-outline-success">
-                    <input type="radio" name="pregunta3" value="4" required> Completamente de acuerdo
-                </label>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-danger me-4">
+                        <input type="radio" name="pregunta3" value="1" required> En desacuerdo
+                    </label>
+                    <label class="btn btn-outline-warning me-4">
+                        <input type="radio" name="pregunta3" value="2" required> Poco de acuerdo
+                    </label>
+                    <label class="btn btn-outline-primary me-4">
+                        <input type="radio" name="pregunta3" value="3" required> Parcialmente de acuerdo
+                    </label>
+                    <label class="btn btn-outline-success">
+                        <input type="radio" name="pregunta3" value="4" required> Completamente de acuerdo
+                    </label>
+                </div>
             </div>
         </div>
 
-        <div class="mb-3">
+        <!-- Fourth Question Group: Light Green Background -->
+        <div class="mb-3 p-4 bg-light border rounded mt-3">
             <label class="form-label">Tengo suficiente tiempo para realizar todas las actividades que me han sido encomendadas dentro de mi jornada laboral</label>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-outline-danger me-4">
-                    <input type="radio" name="pregunta4" value="1" required> En desacuerdo
-                </label>
-                <label class="btn btn-outline-warning me-4">
-                    <input type="radio" name="pregunta4" value="2" required> Poco de acuerdo
-                </label>
-                <label class="btn btn-outline-primary me-4">
-                    <input type="radio" name="pregunta4" value="3" required> Parcialmente de acuerdo
-                </label>
-                <label class="btn btn-outline-success">
-                    <input type="radio" name="pregunta4" value="4" required> Completamente de acuerdo
-                </label>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-danger me-4">
+                        <input type="radio" name="pregunta4" value="1" required> En desacuerdo
+                    </label>
+                    <label class="btn btn-outline-warning me-4">
+                        <input type="radio" name="pregunta4" value="2" required> Poco de acuerdo
+                    </label>
+                    <label class="btn btn-outline-primary me-4">
+                        <input type="radio" name="pregunta4" value="3" required> Parcialmente de acuerdo
+                    </label>
+                    <label class="btn btn-outline-success">
+                        <input type="radio" name="pregunta4" value="4" required> Completamente de acuerdo
+                    </label>
+                </div>
             </div>
         </div>
 
-        <div class="d-flex justify-content-end">
-            
-            <button type="submit" class="btn btn-outline-primary">
-                Guardar
-            </button>
-
-            <a type="submit" href="{% url 'machineLearning:liderazgo' %}" class="btn btn-outline-primary">
-                Siguiente
-            </a>
+        <header class="text-center">
+            <h4>Continuamos a evaluar el desarrollo de competencias</h4>
+        </header>
+        <!-- Fifth Question Group: Light Purple Background -->
+        <div class="mb-3 p-4 bg-light border rounded mt-3">
+            <label class="form-label">Considero que tengo los suficientes conocimientos, habilidades y destrezas para desarrollar el trabajo para el cual fui contratado</label>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-danger me-4">
+                        <input type="radio" name="pregunta5" value="1" required> En desacuerdo
+                    </label>
+                    <label class="btn btn-outline-warning me-4">
+                        <input type="radio" name="pregunta5" value="2" required> Poco de acuerdo
+                    </label>
+                    <label class="btn btn-outline-primary me-4">
+                        <input type="radio" name="pregunta5" value="3" required> Parcialmente de acuerdo
+                    </label>
+                    <label class="btn btn-outline-success">
+                        <input type="radio" name="pregunta5" value="4" required> Completamente de acuerdo
+                    </label>
+                </div>
+            </div>
         </div>
-        
-    </form>
-    
-</div>
 
+        <!-- Sixth Question Group: Light Orange Background -->
+        <div class="mb-3 p-4 bg-light border rounded mt-3">
+            <label class="form-label">En mi trabajo aprendo y adquiero nuevos conocimientos, habilidades y destrezas de mis compañeros de trabajo</label>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-danger me-4">
+                        <input type="radio" name="pregunta6" value="1" required> En desacuerdo
+                    </label>
+                    <label class="btn btn-outline-warning me-4">
+                        <input type="radio" name="pregunta6" value="2" required> Poco de acuerdo
+                    </label>
+                    <label class="btn btn-outline-primary me-4">
+                        <input type="radio" name="pregunta6" value="3" required> Parcialmente de acuerdo
+                    </label>
+                    <label class="btn btn-outline-success">
+                        <input type="radio" name="pregunta6" value="4" required> Completamente de acuerdo
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 p-4 bg-light border rounded mt-3">
+            <label class="form-label">En mi trabajo se cuenta con un plan de carrera, capacitación y/o entrenamiento para el desarrollo de mis conocimientos, habilidades y destrezas</label>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-danger me-4">
+                        <input type="radio" name="pregunta7" value="1" required> En desacuerdo
+                    </label>
+                    <label class="btn btn-outline-warning me-4">
+                        <input type="radio" name="pregunta7" value="2" required> Poco de acuerdo
+                    </label>
+                    <label class="btn btn-outline-primary me-4">
+                        <input type="radio" name="pregunta7" value="3" required> Parcialmente de acuerdo
+                    </label>
+                    <label class="btn btn-outline-success">
+                        <input type="radio" name="pregunta7" value="4" required> Completamente de acuerdo
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3 p-4 bg-light border rounded mt-3">
+            <label class="form-label">En mi trabajo se evalúa objetiva y periódicamente las actividades que realizo</label>
+            <div class="d-flex justify-content-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-danger me-4">
+                        <input type="radio" name="pregunta8" value="1" required> En desacuerdo
+                    </label>
+                    <label class="btn btn-outline-warning me-4">
+                        <input type="radio" name="pregunta8" value="2" required> Poco de acuerdo
+                    </label>
+                    <label class="btn btn-outline-primary me-4">
+                        <input type="radio" name="pregunta8" value="3" required> Parcialmente de acuerdo
+                    </label>
+                    <label class="btn btn-outline-success">
+                        <input type="radio" name="pregunta8" value="4" required> Completamente de acuerdo
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">
+                Siguiente
+            </button>
+        </div>
+    </form>
+
+</div>
 {% endblock %}

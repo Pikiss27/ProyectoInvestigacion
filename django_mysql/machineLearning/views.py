@@ -13,6 +13,10 @@ def formulario(request):
         pregunta2 = int(request.POST['pregunta2'])   
         pregunta3 = int(request.POST['pregunta3'])
         pregunta4 = int(request.POST['pregunta4'])
+        pregunta5 = int(request.POST['pregunta5'])
+        pregunta6 = int(request.POST['pregunta6'])
+        pregunta7 = int(request.POST['pregunta7'])
+        pregunta8 = int(request.POST['pregunta8'])
         
         Y_pred = model.predict([[pregunta1, pregunta2, pregunta3, pregunta4]])
         
@@ -31,6 +35,10 @@ def formulario(request):
             pregunta2=pregunta2,
             pregunta3=pregunta3,
             pregunta4=pregunta4,
+            pregunta5=pregunta5,
+            pregunta6=pregunta6,
+            pregunta7=pregunta7,
+            pregunta8=pregunta8,
             resultado=Y_pred,
             usuario=request.user,
         )
@@ -38,35 +46,3 @@ def formulario(request):
             
       #  return render(request, 'index.html', {'response': Y_pred})
     return render(request, 'index.html')
-
-   
-
-
-def desarrolloCompetencias_view(request):
-    # Puedes pasarle datos a la plantilla si es necesario
-    
-    return render(request, 'desarrolloCompetencias.html')
-def liderazgo_view(request):
-    # Puedes pasarle datos a la plantilla si es necesario
-    
-    return render(request, 'liderazgo.html')
-def accionControl_view(request):
-    # Puedes pasarle datos a la plantilla si es necesario
-    
-    return render(request, 'accionControl.html')
-def organizacionTrabajo_view(request):
-    # Puedes pasarle datos a la plantilla si es necesario
-    
-    return render(request, 'organizacionTrabajo.html')
-def recuperacion_view(request):
-    # Puedes pasarle datos a la plantilla si es necesario
-    
-    return render(request, 'recuperacion.html')
-def soporteApoyo_view(request):
-    # Puedes pasarle datos a la plantilla si es necesario
-    
-    return render(request, 'soporteApoyo.html')
-def otros_view(request):
-    # Puedes pasarle datos a la plantilla si es necesario
-    
-    return render(request, 'otros.html')
