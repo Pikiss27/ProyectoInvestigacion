@@ -6,7 +6,7 @@ from .views import edit_profile
 
 urlpatterns = [
     path('', home, name='home'),
-    path('productos/', productos, name='productos'),
+    path('informacion/', productos, name='informacion'),
     path('resultados/', resultados, name='resultados'),
     path('register/', register, name='register'),
     path('logout/', exit, name='exit'),
